@@ -20,6 +20,7 @@
   }
   %>
   <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
+  <meta name="baidu-site-verification" content="eIpvBFjUro" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
   <% if (theme.rss){ %>
@@ -37,7 +38,6 @@
     <%- css('scrollLoading/style') %>
   <% } %>
   <%- partial('google-analytics') %>
-
   <% if (theme.logo){ %>
     <style type="text/css">
       .logo { background-image:url(<%= theme.logo %>); }
@@ -52,4 +52,12 @@
     <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   <% } %>
   <%- css('font-awesome/css/font-awesome.min') %>
+  <script>
+    (function(){
+        var bp = document.createElement('script');
+        bp.src = '//push.zhanzhang.baidu.com/push.js';
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 </head>

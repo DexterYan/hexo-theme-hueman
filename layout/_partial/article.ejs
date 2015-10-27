@@ -36,7 +36,30 @@
         <%- post.content %>
       </div>
       <footer class="article-footer">
-        <a data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link"><i class="fa fa-share"></i><%=__('article.share')%></a>
+        <!-- <a data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link"><i class="fa fa-share"></i><%=__('article.share')%></a> -->
+        <!-- JiaThis Button BEGIN -->
+        <div class="jiathis_style">
+        <span class="jiathis_txt">分享到：</span>
+        <a class="jiathis_button_weixin">微信</a>
+        <a class="jiathis_button_tsina">新浪微博</a>
+        <a class="jiathis_button_cqq">QQ好友</a>
+        <a class="jiathis_button_douban">豆瓣</a>
+        <a class="jiathis_button_fb">Facebook</a>
+
+        <a href="http://www.jiathis.com/share?uid=2061610" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+        <a class="jiathis_counter_style"></a>
+        </div>
+        <script type="text/javascript" >
+        var jiathis_config={
+          data_track_clickback:true,
+          summary:"",
+          shortUrl:true,
+          hideMore:false
+        }
+        </script>
+        <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=2061610" charset="utf-8"></script>
+        <!-- JiaThis Button END -->
+
         <% if (post.comments && config.disqus_shortname){ %>
           <a href="<%- post.permalink %>#comments" class="article-comment-link"><i class="fa fa-comments"></i><%=__('article.comments')%></a>
         <% } %>
@@ -52,6 +75,7 @@
     </section>
   <% } %>
   <% if (!index && post.comments && config.duoshuo_shortname){ %>
+  
   <section id="comments">
     <!-- 多说评论框 start -->
     <div class="ds-thread" data-thread-key="<%= post.layout %>-<%= post.slug %>" data-title="<%= post.title %>" data-url="<%= page.permalink %>"></div>
